@@ -1,0 +1,25 @@
+-- DELIMITER //
+
+-- CREATE FUNCTION get_square(num INT)
+-- RETURNS INT
+-- DETERMINISTIC NO SQL READS SQL DATA
+-- BEGIN
+--     RETURN num * num;
+-- END //
+
+-- DELIMITER ;
+
+
+DELIMITER //
+
+CREATE FUNCTION get_square_root_double(num INT)
+RETURNS DOUBLE(10,5)
+DETERMINISTIC NO SQL READS SQL DATA
+BEGIN
+    RETURN SQRT(num);
+END //
+
+DELIMITER ;
+
+
+SELECT get_square_root_double(2)
